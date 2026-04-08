@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Tugas Form Pendaftaran</title>
+    <style>
+        /* warna background dan font standar */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* cara klasik bikin kotak ke tengah pakai margin auto */
+        .kotak {
+            width: 350px;
+            background-color: #111;
+            margin: 50px auto; 
+            padding: 20px;
+            border: 2px solid #d500f9; /* garis ungu */
+            box-shadow: 0px 0px 15px #d500f9; /* efek neon ungu */
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d500f9;
+            text-shadow: 0px 0px 5px #d500f9;
+        }
+
+        /* biar input namanya gak kepanjangan */
+        input[type="text"] {
+            width: 95%;
+            padding: 5px;
+            background-color: black;
+            color: white;
+            border: 1px solid #d500f9;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+
+        /* style tombol simple */
+        .tombol-ok {
+            background-color: black;
+            color: #d500f9;
+            border: 2px solid #d500f9;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .tombol-clear {
+            background-color: black;
+            color: red;
+            border: 2px solid red;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kotak">
+        <h2>Form Pendaftaran</h2>
+
+        <form>
+            Nama: <br>
+            <input type="text" id="nama" name="nama"> <br><br>
+
+            Kelas: <br>
+            <input type="text" name="kelas"> <br><br>
+
+            Umur: <br>
+            <input type="checkbox" name="umur" value="10-12"> 10-12 tahun <br>
+            <input type="checkbox" name="umur" value="13-15"> 13-15 tahun <br>
+            <input type="checkbox" name="umur" value="16-17"> 16-17 tahun <br><br>
+
+            Jenis Kelamin: <br>
+            <input type="radio" name="jk" value="laki-laki"> Laki-laki <br>
+            <input type="radio" name="jk" value="perempuan"> Perempuan <br><br>
+
+            Tingkatan: <br>
+            <input type="radio" name="tingkatan" value="sd"> SD <br>
+            <input type="radio" name="tingkatan" value="smp"> SMP <br>
+            <input type="radio" name="tingkatan" value="sma"> SMA <br><br>
+
+            <button type="button" class="tombol-ok" onclick="cekData()">OK</button>
+            <button type="reset" class="tombol-clear">Clear</button>
+        </form>
+    </div>
+
+    <script>
+        function cekData() {
+            
+            var nm = document.getElementById("nama").value;
+
+            
+            if(nm == "") {
+                alert("Namanya jangan lupa diisi ya!");
+            } else {
+                alert("Mantap " + nm + ", kamu berhasil daftar!");
+            }
+        }
+    </script>
+
+</body>
+</html>
